@@ -409,6 +409,66 @@ body {
   background: var(--c-surface-2);
 }
 
+/* Template button with shine */
+.btn-template {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--c-surface);
+  color: var(--c-text);
+  font-family: var(--f-mono);
+  font-size: var(--sz-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--c-border-hi);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+}
+
+.btn-template::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 73, 110, 0.25), transparent);
+  transform: skewX(-20deg);
+  animation: shine-sweep 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes shine-sweep {
+  0% {
+    left: -150%;
+  }
+
+  35% {
+    left: 150%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+.btn-template:hover {
+  border-color: var(--c-sakura);
+  background: var(--c-surface-2);
+  text-decoration: none;
+}
+
+.btn-template:active {
+  transform: scale(0.95);
+}
+
 /* Bigger variant — used in the CTA hero row */
 .btn-lg {
   padding: 13px 26px;
@@ -523,7 +583,7 @@ body {
 .cover-svg {
   position: relative;
   z-index: 1;
-  height: 110px;
+  height: 160px;
   width: auto;
   object-fit: contain;
   opacity: 0.88;

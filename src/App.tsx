@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback, type ReactNode, type ElementType } from 'react';
-import { MapPin, Clock, Mail, Globe, ExternalLink, GraduationCap, Venus } from 'lucide-react';
+import { MapPin, Clock, Mail, Globe, ExternalLink, GraduationCap, Venus, Github } from 'lucide-react';
 import pfp from './assets/pfp.jpg';
 import diaCover from './assets/dia_cover.svg';
 import cuteGif from './assets/cute.gif';
@@ -17,10 +17,10 @@ const navLinks = [
 ];
 
 const info = [
-  { icon: GraduationCap, label: 'Education', text: 'BS 2nd Sem @IIT-M' },
+  { icon: GraduationCap, label: 'Education', text: 'BS in Data Science - IIT Madras' },
   { icon: MapPin, label: 'Location', text: 'India' },
   { icon: Clock, label: 'Timezone', text: 'UTC +05:30' },
-  { icon: Venus, label: 'Pronouns', text: 'she / her' },
+  { icon: Venus, label: 'Pronouns', text: 'he / him' },
   { icon: Mail, label: 'Email', text: 'shadysubh@gmail.com', href: 'mailto:shadysubh@gmail.com' },
   { icon: Globe, label: 'Website', text: 'shadylarva.me', href: 'https://shadylarva.me' },
 ];
@@ -508,10 +508,16 @@ export default function App() {
 
         <RevealRule />
 
+        <div style={{ display: 'flex', justifyContent: 'center', padding: 'var(--s3) var(--s3) var(--s5)' }}>
+          <Reveal variant="up" as="a" href="https://github.com/ShadySubh/cherryblossom" target="_blank" rel="noreferrer" className="btn-template btn-lg">
+            <Github size={16} /> Get source code for this portfolio on my github
+          </Reveal>
+        </div>
+
         {/* ── Footer ─────────────────────────── */}
         <Reveal variant="up" className="footer" as="footer">
           <span>© {new Date().getFullYear()} Shibu D.</span>
-          <span>Built with precision.</span>
+          <span>built and developed by Shibu D.</span>
         </Reveal>
 
       </div>
